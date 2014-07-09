@@ -1,28 +1,56 @@
-== README
+*******************SUPERMARKET**********************
+1. Create new project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+````
+rails new supermarket
 
-Things you may want to cover:
+````
+2.Add dependency gem files
 
-* Ruby version
+````
+> gem 'simple_form'
+> gem "therubyracer"
+> gem 'country_select'
+> gem 'quiet_assets'
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'less-rails'
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+````
+3. Install bootstrap
+
+````
+> rails generate bootstrap:install less
+> rails g bootstrap:layout application fluid
+
+````
+4. Install simple form
+
+````
+> rails generate simple_form:install
+
+````
+5. Create first model
+
+````
+bin/rails g model city name
+
+
+ ````
+ 6. Create second model 
+
+ ````
+
+ bin/rails g model city name email city :references country phone_number :integer
+
+ ````
+ 7. Create second controller
+
+ ````
+ bin/rails g controller customers
+
+ ``````
+
+
+
